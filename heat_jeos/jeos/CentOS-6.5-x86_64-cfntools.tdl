@@ -26,12 +26,12 @@ chmod +x /etc/rc.d/rc.local
     </command>
     <command name='packages'>
 yum -y update
-curl -O http://ftp.ps.pl/pub/Linux/fedora-epel/6/x86_64/epel-release-6-7.noarch.rpm
-rpm -Uvh epel-release-6-7.noarch.rpm
+curl -O http://ftp.ps.pl/pub/Linux/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -Uvh epel-release-6-8.noarch.rpm
 yum -y install perl python python-setuptools cloud-init python-pip
 pip-python install argparse 'boto==2.5.2' heat-cfntools
 cfn-create-aws-symlinks --source /usr/bin
-rm -f epel-release-6-7.noarch.rpm
+rm -f epel-release-6-8.noarch.rpm
     </command>
     <command name='post-configuration'>
 chkconfig --level 345 sshd on
